@@ -129,6 +129,7 @@ button:hover{
 .slider {
     display: flex;
     transition: transform 0.5s ease;
+    display: flex;
 }
 
 .slider-item {
