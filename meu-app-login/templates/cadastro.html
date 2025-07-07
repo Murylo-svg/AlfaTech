@@ -1,0 +1,63 @@
+<!-- cadastro.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie sua Conta - Alfatech</title>
+    <!-- Vinculando ao mesmo arquivo CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../IMAGEM/LOGO ALFATECH 3.png" alt="Logo da Alfatech">
+        </div>
+        <nav>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Usando a mesma classe 'form-container' da página de login -->
+        <div class="form-container">
+            <h2>Crie sua Conta</h2>
+            <p>Preencha os campos abaixo para se registrar.</p>
+            
+            <form id="form-contato" method="POST" action="/register"> <!-- Action para o endpoint de registro -->
+                
+                <!-- Usando 'input-group' para aplicar o estilo correto -->
+                <div class="input-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Crie uma senha forte" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirmar-senha">Confirmar Senha</label>
+                    <input type="password" id="confirmar-senha" name="confirmar_senha" placeholder="Confirme sua senha" required>
+                </div>
+                
+                <a href="login.html"><button type="submit">Cadastrar</button></a>
+                
+                <p class="switch-page-link">
+                    Já tem uma conta? <a href="login.html">Faça Login</a>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2023 Alfatech. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Alfatech</title>
+    <!-- O caminho para o CSS agora aponta para uma pasta 'css' -->
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+             <!-- O caminho da imagem deve estar correto -->
+            <img src="../../IMAGEM/LOGO ALFATECH 3.png" alt="Logo da Alfatech">
+        </div>
+        <nav>
+            <a href="cadastro.html">Criar Conta</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Usando a classe genérica 'form-container' -->
+        <div class="form-container">
+            <form action="/login" method="POST">
+                <h2>Login do Painel</h2>
+                <p>Acesse sua conta para continuar.</p>
+
+                <!-- Área para exibir mensagens de erro ou sucesso -->
+                <div id="message-area" class="message-area"></div>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                </div>
+                
+                <!-- CORRIGIDO: O botão 'submit' não deve conter um link '<a>' -->
+                <button type="submit">Entrar</button>
+
+                <!-- Link para a página de cadastro -->
+                <p class="switch-page-link">
+                    Ainda não tem conta? <a href="cadastro.html">Crie uma aqui.</a>
+                </p>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2023 Alfatech. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Script para mostrar mensagens de erro/sucesso vindas do servidor via URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const messageDiv = document.getElementById('message-area');
+
+        if (urlParams.has('error')) {
+            messageDiv.innerText = 'Email ou senha inválidos!';
+        } else if (urlParams.get('success') === 'registered') {
+            messageDiv.innerText = 'Cadastro realizado com sucesso! Faça o login.';
+            messageDiv.classList.add('success'); // Adiciona classe para estilizar como sucesso
+        }
+    </script>
+</body>
+</html>
