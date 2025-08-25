@@ -1,63 +1,58 @@
-<!-- cadastro.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crie sua Conta - Alfatech</title>
-    <!-- Vinculando ao mesmo arquivo CSS -->
-    <link rel="stylesheet" href="../style.css">
+    <title>Crie sua Conta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css"> <!-- Seu arquivo CSS -->
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="../../IMAGEM/LOGO ALFATECH 3.png" alt="Logo da Alfatech">
+            <h1>Meu App</h1>
         </div>
         <nav>
-            <a href="login.html">Login</a>
+            <ul>
+                <li><a href="login.html">Login</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Usando a mesma classe 'form-container' da página de login -->
-        <div class="form-container">
+        <section id="cadastro-section">
             <h2>Crie sua Conta</h2>
             <p>Preencha os campos abaixo para se registrar.</p>
-            
-            <form id="form-contato" method="POST" action="/register"> <!-- Action para o endpoint de registro -->
-                
-                <!-- Usando 'input-group' para aplicar o estilo correto -->
-                <div class="input-group">
-                    <label for="nome">Nome Completo</label>
+            <form id="form-contato" method="POST" action="#"> <!-- Action para onde o form envia os dados -->
+                <div>
+                    <label for="nome" style="display: block; margin-bottom: 5px; font-weight: bold;">Nome Completo:</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                 </div>
-                
-                <div class="input-group">
-                    <label for="email">Email</label>
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu email" required>
                 </div>
-                
-                <div class="input-group">
-                    <label for="senha">Senha</label>
+                <div>
+                    <label for="senha" style="display: block; margin-bottom: 5px; font-weight: bold;">Senha:</label>
                     <input type="password" id="senha" name="senha" placeholder="Crie uma senha forte" required>
                 </div>
-
-                <div class="input-group">
-                    <label for="confirmar-senha">Confirmar Senha</label>
+                <div>
+                    <label for="confirmar-senha" style="display: block; margin-bottom: 5px; font-weight: bold;">Confirmar Senha:</label>
                     <input type="password" id="confirmar-senha" name="confirmar_senha" placeholder="Confirme sua senha" required>
                 </div>
-                
-                <a href="login.html"><button type="submit">Cadastrar</button></a>
-                
-                <p class="switch-page-link">
-                    Já tem uma conta? <a href="login.html">Faça Login</a>
+                <button type="submit">Cadastrar</button>
+                <p style="text-align: center; margin-top: 15px;">
+                    Já tem uma conta? <a href="login.html" style="color: #3498db; text-decoration: none;">Faça Login</a>
                 </p>
             </form>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2023 Alfatech. Todos os direitos reservados.</p>
+        <p>© 2023 Meu App. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </body>
 </html>

@@ -10,6 +10,7 @@ body {
     background-color: #f4f4f4;
     color: #333;
     scroll-behavior: smooth;
+    
 }
 
 header {
@@ -64,6 +65,7 @@ nav a:hover {
 
 main {
     padding: 30px;
+    flex-grow: 1;
 }
 
 button a{
@@ -187,6 +189,10 @@ footer {
     color: white;
 }
 
+footer .rodape{
+    align-items: end;
+}
+
 footer p {
     font-size: 1rem;
 }
@@ -217,3 +223,88 @@ footer p {
     }
 }
 
+/* --- Estilos para a Página de Produtos --- */
+
+/* Título principal da seção */
+.titulo-secao {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #333; /* Cor escura para o texto */
+}
+
+/* A grade que segura todos os produtos */
+.produtos-grid {
+    display: grid;
+    /* Cria colunas responsivas: elas tentam ter 300px, mas se ajustam ao espaço */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Espaçamento entre os cards */
+    max-width: 1200px; /* Largura máxima da grade */
+    margin: 0 auto; /* Centraliza a grade na página */
+    padding: 20px;
+}
+
+/* Estilo individual de cada card de produto */
+.produto-card {
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave */
+    display: flex;
+    flex-direction: column; /* Organiza os itens em coluna */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.produto-card:hover {
+    transform: translateY(-10px); /* Levanta o card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem dentro do card */
+.produto-card img {
+    max-width: 180px; /* Largura máxima da imagem */
+    height: auto;
+    margin: 0 auto 15px auto; /* Centraliza e adiciona margem inferior */
+}
+
+/* Título do produto (h3) */
+.produto-card h3 {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    flex-grow: 1; /* Faz o título empurrar o preço para baixo */
+}
+
+/* Especificações do produto (p) */
+.produto-card .specs {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Preço do produto */
+.produto-card .preco {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007BFF; /* Cor azul para destaque */
+    margin-bottom: 20px;
+}
+
+/* Botão de detalhes */
+.produto-card .botao-detalhes {
+    background-color: #007BFF; /* Cor de fundo azul */
+    color: white; /* Texto branco */
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.produto-card .botao-detalhes:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}

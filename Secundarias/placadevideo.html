@@ -6,7 +6,7 @@
     <title>AlfaTech</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
     <header>
@@ -18,22 +18,32 @@
                 <li><a href="produto.html">Produtos</a></li>
                 <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="contato.html">Contato</a></li>
+                <li><a href="processadores.html">Processadores</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slider-item">
-                    <img src="../IMAGEM/placa de video 3060.webp" alt="#">
-                    <h3>Placa de Vídeo Palit NVIDIA GeForce RTX 3060 <p>Dual, LHR, 12GB, GDDR6, DLSS, Ray Tracing</p></h3>
-                </div>
-                <div class="slider-item">
+        <div class="produtos-grid">
+        <div class="produto-card">
+              <img src="../IMAGEM/3060.png" alt="#">
+                <h3>Placa de Vídeo Palit NVIDIA GeForce RTX 3060</h3>
+                <p class="specs"></p>
+                <span class="preco">R$ 1.695,99</span>
+                <a href="#" class="botao-detalhes">Ver Detalhes</a>
+            </div>
+                <div class="produto-card">
                     <img src="../IMAGEM/rtx 4070 super.webp" alt="#">
                     <h3>ZOTAC GAMING GeForce RTX 4070 SUPER Twin Edge 12GB</p></h3>
+                    <span class="preco">R$ 1.695,99</span>
+                    <a href="#" class="botao-detalhes">Ver Detalhes</a>
                 </div>
             </div>
-        </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 </html>
+ <footer>
+    <div class="rodape">
+        <p>&copy; 2025 Loja de Informática. Todos os direitos reservados.</p>
+        </div>
+    </footer>

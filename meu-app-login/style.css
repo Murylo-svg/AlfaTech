@@ -1,17 +1,12 @@
-/* style.css - (Coloque este arquivo em uma pasta, por exemplo, 'css') */
-
-/* Importa a fonte do Google Fonts */
+/* style.css (CORRIGIDO) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Variáveis de cor para fácil customização */
 :root {
     --primary-color: #007bff;
     --bg-color: #f4f7f6;
     --card-bg: #ffffff;
     --text-color: #333;
-    --error-color: #d9534f;
-    --success-color: #28a745;
-    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 * {
@@ -20,82 +15,60 @@
     box-sizing: border-box;
 }
 
+/* --- MUDANÇA PRINCIPAL NO BODY --- */
+/* Removemos o 'display: flex' para que os elementos (header, main) se comportem normalmente, um abaixo do outro. */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    display: flex; /* Permite que o footer fique no final da página */
-    flex-direction: column;
-    min-height: 100vh;
+    margin: 0;
 }
 
-/* --- ESTILO DO CABEÇALHO --- */
+/* --- ESTILO PARA O HEADER COM A LOGO --- */
 header {
-    background-color: #0080ff;
-    padding: 15px 40px;
-    text-align: center;
+    background-color: #0080ff; /* Fundo branco para destacar */
+    padding: 20px 0; /* Espaçamento vertical */
+    text-align: center; /* Centraliza a imagem horizontalmente */
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
 }
 
-header .logo img {
-    max-width: 180px; /* Tamanho da logo */
+header img {
+    max-width: 300px; /* Definindo um tamanho máximo para a logo */
     height: auto;
 }
 
-header nav a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 8px 16px;
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-header nav a:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-
-/* --- ESTILO DO CONTEÚDO PRINCIPAL --- */
+/* --- NOVO ESTILO PARA O MAIN --- */
+/* Transformamos o <main> em um container flex para centralizar o formulário,
+   deixando o <header> fora disso. */
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
-    flex-grow: 1; /* Faz o main ocupar o espaço disponível */
+    padding: 40px 20px; /* Espaçamento para não colar no header */
+    flex-grow: 1; /* Faz o main ocupar o espaço restante */
+    min-height: calc(100vh - 150px); /* Garante que ocupe a tela, descontando o header e footer */
 }
 
-/* --- ESTILO DO CONTAINER DO FORMULÁRIO (PARA LOGIN E CADASTRO) --- */
-.form-container {
+/* --- ESTILOS DO LOGIN (sem grandes mudanças) --- */
+.login-container {
     background-color: var(--card-bg);
     padding: 2rem 3rem;
     border-radius: 10px;
     box-shadow: var(--shadow);
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     text-align: center;
 }
 
-.form-container h2 {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.8rem;
-}
-
-.form-container p {
+.login-container h2 {
     margin-bottom: 1.5rem;
-    color: #666;
+    color: var(--primary-color);
 }
 
 .input-group {
     text-align: left;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .input-group label {
@@ -109,13 +82,12 @@ main {
     padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
+    box-sizing: border-box;
 }
 
-button[type="submit"] {
+button {
     width: 100%;
-    padding: 0.9rem;
+    padding: 0.8rem;
     border: none;
     border-radius: 5px;
     background-color: var(--primary-color);
@@ -124,46 +96,30 @@ button[type="submit"] {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 1rem;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* --- ÁREA DE MENSAGENS (ERRO/SUCESSO) --- */
-.message-area {
-    color: var(--error-color);
+.error {
+    color: #d9534f;
     min-height: 20px;
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
-.message-area.success {
-    color: var(--success-color);
-}
-
-/* --- LINK PARA PÁGINA ALTERNATIVA (LOGIN/CADASTRO) --- */
-.switch-page-link {
+/* --- NOVO: Estilo para o link de cadastro --- */
+.cadastro-link {
     margin-top: 1.5rem;
     font-size: 0.9rem;
 }
-.switch-page-link a {
+.cadastro-link a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
 }
 
-.switch-page-link a:hover {
+.cadastro-link a:hover {
     text-decoration: underline;
-}
-
-/* --- ESTILO DO RODAPÉ --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #0080ff;
-    color: #fff;
-    font-size: 0.9rem;
-    width: 100%;
 }
