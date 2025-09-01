@@ -91,6 +91,10 @@ section:hover {
     background-color: #ecf0f1;
 }
 
+.section-home img{
+    width: 500px;
+
+}
 
 .section-home h2 {
     font-size: 3rem;
@@ -307,4 +311,141 @@ footer p {
 /* Efeito ao passar o mouse sobre o botão */
 .produto-card .botao-detalhes:hover {
     background-color: #0056b3; /* Azul mais escuro */
+}
+
+  /* Estilos para o botão flutuante */
+  .whatsapp-float-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    color: #FFF;
+    border-radius: 50px; /* Deixa o botão redondo */
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Efeito ao passar o mouse por cima */
+  .whatsapp-float-button:hover {
+    transform: scale(1.1); /* Aumenta um pouco o tamanho */
+  }
+
+  /* Estilo para o ícone dentro do botão */
+  .whatsapp-icon {
+    margin-top: 13px; /* Centraliza o ícone verticalmente */
+  }
+
+  /* --- ESTRUTURA PRINCIPAL (MAPA + PAINÉIS) --- */
+
+.container-mapa-e-paineis {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+  align-items: stretch;
+  gap: 25px; /* Espaçamento entre o mapa e o bloco de painéis */
+  padding: 20px 0;
+}
+
+/* Define o tamanho da coluna do mapa */
+.coluna-mapa {
+  flex: 2; /* O mapa ocupará mais espaço */
+  min-width: 350px; /* Largura mínima para o mapa não espremer */
+}
+
+/* Garante que o iframe do mapa preencha a coluna */
+.coluna-mapa iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  border: 0;
+}
+
+/* Container que segura os dois painéis de redes sociais */
+.container-paineis-sociais {
+  flex: 1.5; /* Ocupa o espaço restante */
+  display: flex;
+  gap: 25px; /* Espaçamento ENTRE os dois painéis */
+  min-width: 320px;
+}
+
+
+/* --- ESTILOS COMUNS PARA OS PAINÉIS DE REDES SOCIAIS --- */
+
+.painel-social {
+  flex: 1; /* Cada painel ocupa metade do espaço no container deles */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.painel-social h3 {
+  font-size: 20px;
+  color: #262626;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.painel-social p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  min-height: 40px; /* Garante alinhamento mesmo com textos de tamanhos diferentes */
+}
+
+.social-qrcode {
+  width: 100%;
+  max-width: 150px; /* QR Code um pouco menor para caber */
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.social-follow-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%; /* Botões ocupam a largura total do painel */
+  box-sizing: border-box;
+}
+
+.social-follow-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA CADA REDE SOCIAL --- */
+
+.painel-social.instagram .social-follow-button {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.painel-social.facebook .social-follow-button {
+  background-color: #1877F2; /* Cor oficial do Facebook */
+}
+
+
+/* --- CÓDIGO PARA CELULARES (RESPONSIVO) --- */
+@media (max-width: 1024px) {
+  .container-mapa-e-paineis,
+  .container-paineis-sociais {
+    flex-direction: column; /* Em telas menores, tudo fica em uma única coluna */
+  }
 }
